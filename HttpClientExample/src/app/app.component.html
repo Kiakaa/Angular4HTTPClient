@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -17,4 +17,16 @@
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
 </ul>
-
+-->
+<button class="btn btn-primary" (click)="GetCustomerByHttpClient_RequestMethod_withParaFromString()">GetCustomerByHttpClient_RequestMethod_withParaFromString</button>
+<button class="btn btn-primary" (click)="GetCustomerWithHttpHeaders()">GetCustomerWithHttpHeaders</button>
+<button class="btn btn-primary" (click)="PutWithPara()">PutWithPara</button>
+<button class="btn btn-primary" (click)="PatchWithPara()">PatchWithPara</button>
+<button class="btn btn-primary" (click)="DeleteWithPara()">DeleteWithPara</button>
+<button class="btn btn-primary" (click)="PostWithPara()">PostWithPara</button>
+<ul *ngIf="customersObservable | async as customers else empty">
+    <li *ngFor="let customer of customers">
+    {{customer|json}}
+    </li> 
+</ul>
+<ng-template #empty> No Customers Yet </ng-template>
